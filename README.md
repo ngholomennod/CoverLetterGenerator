@@ -49,4 +49,4 @@ To use the generator, you first need to obtain your OpenAI API key. Follow these
 
   Step 9: Open your terminal and enter the directory in which you have cloned this repository, and run: pip install -r requirements.txt
 
-  Step 10: Run Main.py, have fun exploiting capitalism!
+  Step 10: Run Main.py, have fun exploiting capitalism! Your cover letter will be saved where the repo's files are located.

@@ -12,7 +12,7 @@ class GUI(wx.Frame):
         super().__init__(parent=None,
                          title="Capitalism Exploiter", style=wx.DEFAULT_FRAME_STYLE ^ wx.RESIZE_BORDER)
         self.panel = GUI_Panel(self)
-        self.SetSize(500, 330)
+        self.SetSize(460, 300)
         self.Show()
 
 
@@ -24,17 +24,17 @@ class GUI_Panel(wx.Panel):
         self.title_field = wx.TextCtrl(self)
 
         self.reader = ResumeReader.ResumeReader
-        self.openRes_btn = wx.Button(self, label='Open Resumé')
+        self.openRes_btn = wx.Button(self, label='Import Resumé')
         self.openRes_btn.Bind(wx.EVT_BUTTON, self.openResume)
 
-        self.job_desc = wx.StaticText(self, label="Job-Description from Listing")
+        self.job_desc = wx.StaticText(self, label="Job-Description from Listing  |")
         self.desc_field = wx.TextCtrl(self, size=(100, 100))
 
         self.instructions = wx.StaticText(self,
                                           label="Please enter the job title and description from the job "
-                                                "posting.\nPlease "
-                                                "select your resumé to include details from it automatically.\nThe "
-                                                "information"
+                                                "posting.\nTo include details from resumé automatically, select it "
+                                                "with the button below."
+                                                "\nThe information"
                                                 " you provide here will be used to generate the cover letter.")
 
         self.submit_btn = wx.Button(self, label='Generate Cover-Letter')
@@ -47,13 +47,14 @@ class GUI_Panel(wx.Panel):
         horiz_sizer = wx.BoxSizer(wx.HORIZONTAL)
 
         core_sizer.Add(self.instructions, 0, wx.ALL | wx.LEFT, 5)
+        horiz_sizer.Add(self.job_desc, 0, wx.ALL | wx.CENTER, 5)
+
         horiz_sizer.Add(self.job_title, 0, wx.ALL | wx.CENTER, 2)
         horiz_sizer.Add(self.title_field, 0, wx.ALL | wx.LEFT, 5)
-        horiz_sizer.Add(self.openRes_btn, 0, wx.ALL | wx.RIGHT, 5)
+        horiz_sizer.Add(self.openRes_btn, 0, wx.ALL | wx.CENTER, 5)
 
-        core_sizer.Add(horiz_sizer, 0, wx.ALL | wx.CENTER, 5)
+        core_sizer.Add(horiz_sizer, 0, wx.ALL | wx.ALIGN_RIGHT, 0)
 
-        core_sizer.Add(self.job_desc, 0, wx.ALL | wx.CENTER, 2)
         core_sizer.Add(self.desc_field, 0, wx.ALL | wx.EXPAND, 5)
         core_sizer.Add(self.submit_btn, 0, wx.ALL | wx.CENTER, 5)
         core_sizer.Add(self.finalInstr, 0, wx.ALL | wx.CENTER, 5)
