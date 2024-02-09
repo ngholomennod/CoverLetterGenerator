@@ -12,7 +12,7 @@ class GUI(wx.Frame):
         super().__init__(parent=None,
                          title="Capitalism Exploiter", style=wx.DEFAULT_FRAME_STYLE ^ wx.RESIZE_BORDER)
         self.panel = GUI_Panel(self)
-        self.SetSize(500, 320)
+        self.SetSize(500, 330)
         self.Show()
 
 
@@ -40,6 +40,9 @@ class GUI_Panel(wx.Panel):
         self.submit_btn = wx.Button(self, label='Generate Cover-Letter')
         self.submit_btn.Bind(wx.EVT_BUTTON, self.on_submitCL)
 
+        self.finalInstr = wx.StaticText(self, label="Don't forget to read through and correct the letter generated "
+                                                    "before sending it!")
+
         core_sizer = wx.BoxSizer(wx.VERTICAL)
         horiz_sizer = wx.BoxSizer(wx.HORIZONTAL)
 
@@ -53,7 +56,7 @@ class GUI_Panel(wx.Panel):
         core_sizer.Add(self.job_desc, 0, wx.ALL | wx.CENTER, 2)
         core_sizer.Add(self.desc_field, 0, wx.ALL | wx.EXPAND, 5)
         core_sizer.Add(self.submit_btn, 0, wx.ALL | wx.CENTER, 5)
-
+        core_sizer.Add(self.finalInstr, 0, wx.ALL | wx.CENTER, 5)
         self.SetSizer(core_sizer)
 
     def on_submitCL(self, event):
