@@ -23,19 +23,19 @@ class GUI_Panel(wx.Panel):
         self.job_title = wx.StaticText(self, label="Job-Title")
         self.title_field = wx.TextCtrl(self)
 
-        self.name = wx.StaticText(self, label="Full Name")
-        self.name_field = wx.TextCtrl(self)
-
         self.reader = ResumeReader.ResumeReader
         self.openRes_btn = wx.Button(self, label='Open Resumé')
         self.openRes_btn.Bind(wx.EVT_BUTTON, self.openResume)
 
-        self.job_desc = wx.StaticText(self, label="Job-Description")
+        self.job_desc = wx.StaticText(self, label="Job-Description from Listing")
         self.desc_field = wx.TextCtrl(self, size=(100, 100))
 
         self.instructions = wx.StaticText(self,
-                                          label="Please enter the job title and description from the job posting.\nThe information "
-                                                "you provide here will be used to generate the cover letter.")
+                                          label="Please enter the job title and description from the job "
+                                                "posting.\nPlease "
+                                                "select your resumé to include details from it automatically.\nThe "
+                                                "information"
+                                                " you provide here will be used to generate the cover letter.")
 
         self.submit_btn = wx.Button(self, label='Generate Cover-Letter')
         self.submit_btn.Bind(wx.EVT_BUTTON, self.on_submitCL)
@@ -44,12 +44,9 @@ class GUI_Panel(wx.Panel):
         horiz_sizer = wx.BoxSizer(wx.HORIZONTAL)
 
         core_sizer.Add(self.instructions, 0, wx.ALL | wx.LEFT, 5)
-        horiz_sizer.Add(self.name, 0, wx.ALL | wx.CENTER, 2)
-        horiz_sizer.Add(self.name_field, 0, wx.ALL | wx.ALIGN_LEFT, 5)
         horiz_sizer.Add(self.job_title, 0, wx.ALL | wx.CENTER, 2)
-        horiz_sizer.Add(self.title_field, 0, wx.ALL | wx.ALIGN_LEFT, 5)
-
-        horiz_sizer.Add(self.openRes_btn, 0, wx.ALL | wx.LEFT, 5)
+        horiz_sizer.Add(self.title_field, 0, wx.ALL | wx.LEFT, 5)
+        horiz_sizer.Add(self.openRes_btn, 0, wx.ALL | wx.RIGHT, 5)
 
         core_sizer.Add(horiz_sizer, 0, wx.ALL | wx.CENTER, 5)
 
@@ -62,8 +59,7 @@ class GUI_Panel(wx.Panel):
     def on_submitCL(self, event):
         print("Communicating with OpenAI...")
         print(self.reader.readPDF(self.reader.pathVar))
-        OpenAISetup.genCoverLetter(self.title_field.GetValue(), self.desc_field.GetValue(),
-                                   self.name_field.GetValue(), self.reader.readPDF(self.reader.pathVar))
+        OpenAISetup.genCoverLetter(self.title_field.GetValue(), self.desc_field.GetValue(), self.reader.readPDF(self.reader.pathVar))
 
     def openResume(self, event):
         dlg = wx.FileDialog(

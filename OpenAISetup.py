@@ -18,12 +18,12 @@ messages = [{"role": "system", "content": "Write a cover letter for a job based 
                                           "demonstrating why the candidate would be a good fit."}]
 
 
-def genCoverLetter(job_title, job_desc, name, resume):
+def genCoverLetter(job_title, job_desc, resume):
     now = datetime.now()
     current_time = now.strftime("%b.%d.%Y.%H.%M.%S")
     filename = current_time + ' ' + ''.join([job_title]) + " CoverLetter.txt"
     f = open(filename, "w")
-    message = ("Job title: " + job_title + "Job Description: " + job_desc + "Full name: " + name + "Resume: " + resume)
+    message = ("Job title: " + job_title + "Job Description: " + job_desc  + "Resume: " + resume)
     if message:
         messages.append(
             {"role": "user", "content": message},
