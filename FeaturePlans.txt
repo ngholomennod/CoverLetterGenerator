@@ -1,4 +1,0 @@
-Main features:
-- Resume/CV modifier to adjust to fit job reqs
-- Cover letter generator per job desc
-
