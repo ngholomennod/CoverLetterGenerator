@@ -20,7 +20,7 @@ class GUI_Panel(wx.Panel):
     def __init__(self, parent):
         super().__init__(parent)
 
-        self.job_title = wx.StaticText(self, label="Job-Title")
+        self.job_title = wx.StaticText(self, label="Job-Title:")
         self.title_field = wx.TextCtrl(self)
 
         self.reader = ResumeReader.ResumeReader
