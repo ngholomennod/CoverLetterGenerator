@@ -12,9 +12,9 @@ except:
 openai.api_key = key
 
 messages = [{"role": "system", "content": "Write a cover letter for a job based on the submitted excerpt of a job "
-                                          "description and the listed title. When signing off, use the full name "
-                                          "provided. Make sure the cover letter is of adequate length and uses "
-                                          "professional language to show interest in the position while also "
+                                          "description and the listed title. Make sure the cover letter is of "
+                                          "adequate length and uses professional language to show interest in the "
+                                          "position while also"
                                           "demonstrating why the candidate would be a good fit."}]
 
 
