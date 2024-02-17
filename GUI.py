@@ -59,7 +59,8 @@ class GUI_Panel(wx.Panel):
     def on_submitCL(self, event):
         print("Communicating with OpenAI...")
         print(self.reader.readPDF(self.reader.pathVar))
-        OpenAISetup.genCoverLetter(self.title_field.GetValue(), self.desc_field.GetValue(), self.reader.readPDF(self.reader.pathVar))
+        OpenAISetup.genCoverLetter(self.title_field.GetValue(), self.desc_field.GetValue(),
+                                   self.reader.readPDF(self.reader.pathVar))
 
     def openResume(self, event):
         dlg = wx.FileDialog(
