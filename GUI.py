@@ -28,7 +28,7 @@ class GUI_Panel(wx.Panel):
 
         self.instructions = wx.StaticText(self,
                                           label="Please enter the job title and description from the job "
-                                                "posting.\nTo include details from resumé automatically, select it "
+                                                "posting.\nTo include details from résumé automatically, select it "
                                                 "with the button below."
                                                 "\nThe information"
                                                 " you provide here will be used to generate the cover letter.")
