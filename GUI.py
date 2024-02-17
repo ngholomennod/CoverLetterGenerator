@@ -10,7 +10,7 @@ import ResumeReader
 class GUI(wx.Frame):
     def __init__(self):
         super().__init__(parent=None,
-                         title="Capitalism Exploiter", style=wx.DEFAULT_FRAME_STYLE ^ wx.RESIZE_BORDER)
+                         title="Ngholomennod's Cover-Letter Generator", style=wx.DEFAULT_FRAME_STYLE ^ wx.RESIZE_BORDER)
         self.panel = GUI_Panel(self)
         self.SetSize(460, 300)
         self.Show()
