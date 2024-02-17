@@ -1,9 +1,5 @@
-import os
-
 import wx
-
 import OpenAISetup
-
 import ResumeReader
 
 
