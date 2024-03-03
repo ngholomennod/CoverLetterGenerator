@@ -21,8 +21,8 @@ messages = [{"role": "system", "content": "Write a cover letter for a job based 
 
 def genCoverLetter(job_title, job_desc, resume):
     now = datetime.now()
-    current_time = now.strftime("%b.%d.%Y")
-    filename = current_time + ' ' + sanitize_filename(job_title) + " CoverLetter.txt"
+    current_date = now.strftime("%b.%d.%Y")
+    filename = current_date + ' ' + sanitize_filename(job_title) + " CoverLetter.txt"
     f = open(filename, "x")
     message = ("Job title: " + job_title + "Job description: " + job_desc + "Resume: " + resume)
     if message:
