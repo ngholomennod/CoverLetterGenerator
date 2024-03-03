@@ -1,6 +1,6 @@
 ****Preparation****
 
-_NOTE: You must have python installed on your system to use this generator!_
+_NOTE: You must have Python3.11 installed on your system to use this generator!_
 
 To use the generator, you first need to obtain your OpenAI API key. Follow these instructions to access your key:
 
