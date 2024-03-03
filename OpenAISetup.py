@@ -24,7 +24,7 @@ def genCoverLetter(job_title, job_desc, resume):
     current_time = now.strftime("%b.%d.%Y")
     filename = current_time + ' ' + sanitize_filename(job_title) + " CoverLetter.txt"
     f = open(filename, "w")
-    message = ("Job title: " + job_title + "Job Description: " + job_desc + "Resume: " + resume)
+    message = ("Job title: " + job_title + "Job description: " + job_desc + "Resume: " + resume)
     if message:
         messages.append(
             {"role": "user", "content": message},

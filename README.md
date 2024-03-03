@@ -25,12 +25,11 @@ To use the generator, you first need to obtain your OpenAI API key. Follow these
 
     Step 4: Press Command + Space to open Spotlight Search, then type "Terminal" and press Enter to open the terminal.
   
-    Step 5: In the terminal, type the following command and press Enter: nano ~/.bash_profile
+    Step 5: In the terminal, type the following command and press Enter: export OPENAI_API_KEY="your_api_key_here"
+    Remember to replace "your_api_key_here" with your actual OpenAI API key.
   
-    Step 6: In the nano text editor, add the following line at the end of the file: export OPENAI_API_KEY=your_api_key_here
-      Replace "your_api_key_here" with your actual OpenAI API key.
-  
-    Step 7: Save the changes by pressing Control + X, then press Y to confirm, and finally press Enter.
+    Step 6: Close the Terminal window to apply the changes. 
+    You may need to restart any terminal sessions or applications to ensure the updated environment variable is recognized.
 
   **_Next Steps for Linux (Bash Shell)_**
   
