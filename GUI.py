@@ -20,7 +20,7 @@ class GUI_Panel(wx.Panel):
         self.title_field = wx.TextCtrl(self)
 
         self.reader = ResumeReader.ResumeReader
-        self.openRes_btn = wx.Button(self, label='Import Resumé')
+        self.openRes_btn = wx.Button(self, label='Import Resume')
         self.openRes_btn.Bind(wx.EVT_BUTTON, self.openResume)
 
         self.job_desc = wx.StaticText(self, label="Job-Description from Listing  |")
@@ -28,7 +28,7 @@ class GUI_Panel(wx.Panel):
 
         self.instructions = wx.StaticText(self,
                                           label="Please enter the job title and description from the job "
-                                                "posting.\nTo include details from résumé automatically, select it "
+                                                "posting.\nTo include details from resume automatically, select it "
                                                 "with the button below."
                                                 "\nThe information"
                                                 " you provide here will be used to generate the cover letter.")
@@ -64,7 +64,7 @@ class GUI_Panel(wx.Panel):
 
     def openResume(self, event):
         dlg = wx.FileDialog(
-            self, message="Choose a file",
+            self, message="Choose a file:",
             defaultFile="",
             style=wx.FD_OPEN | wx.FD_MULTIPLE | wx.FD_CHANGE_DIR
         )
